@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>		
+#include <locale.h>		
+
+int main() 
+{
+	setlocale(LC_ALL,"Russian");		
+	
+	float x, y, z, a, b, c, s;			
+	
+	printf("¬ведите переменную x<0:");
+	scanf("%f",&x);
+	
+	printf("¬ведите переменную y>0:");
+	scanf("%f",&y);
+	
+	printf("¬ведите переменную z>0:");
+	scanf("%f",&z);
+	
+	a = exp(fabs(x-y))*pow(fabs(x-y),x+y);
+	
+	b = atan(x)+atan(z);
+	
+	c = pow(pow(x,6)+pow(log(y),2),1./3); 
+	
+	s = a/b+c;		
+	
+	printf("%f",s);		
+	
+	return 0;
+}
