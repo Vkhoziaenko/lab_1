@@ -13,7 +13,7 @@ a=pow(exp,fabs(x-y))*pow(fabs(x-y),x+y);
 b=atan(x)+atan(z);
 c=pow(pow(x,6)+pow(log,2)y,1\3);
 s=a\b+c;
-printf("%f, s");
+printf("%f", s);
 
 	return 0;
 }
