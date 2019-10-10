@@ -1,17 +1,17 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <math.h>	      // подключаем математические функции	
-#include <locale.h>		  // подключаем библиотеку локализации (для русского языка в консоли)
+#include <math.h>	      // connect math functions	
+#include <locale.h>		  // connect the localization library (for the Russian language in the console)
  
 
 int main (int argc, char const *argv[])
 
 
 {
-	setlocale(LC_ALL,"Russian");    // устанавливаем русскую локаль в программе
+	setlocale(LC_ALL,"Russian");    // set the Russian locale in the program
     int x, res;                    
-    scanf("%d",&x);                // ввод переменной с клавиатуры
-    res=128*x*x;                   // рассчитываем результат
-    printf ("res = %d\n",res);    // вывод результата на экран
+    scanf("%d",&x);                // keyboard variable input
+    res=128*x*x;                   // calculate the result
+    printf ("res = %d\n",res);    // display result
     return 0;
 }
