@@ -1,18 +1,17 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <math.h>	      // подключаем математические функции	
-#include <locale.h>		  // подключаем библиотеку локализации (для русского языка в консоли)
+#include <math.h>	      // ГЇГ®Г¤ГЄГ«ГѕГ·Г ГҐГ¬ Г¬Г ГІГҐГ¬Г ГІГЁГ·ГҐГ±ГЄГЁГҐ ГґГіГ­ГЄГ¶ГЁГЁ	
+#include <locale.h>		  // ГЇГ®Г¤ГЄГ«ГѕГ·Г ГҐГ¬ ГЎГЁГЎГ«ГЁГ®ГІГҐГЄГі Г«Г®ГЄГ Г«ГЁГ§Г Г¶ГЁГЁ (Г¤Г«Гї Г°ГіГ±Г±ГЄГ®ГЈГ® ГїГ§Г»ГЄГ  Гў ГЄГ®Г­Г±Г®Г«ГЁ)
  
-/* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
 int main (int argc, char const *argv[])
 
 
 {
-	setlocale(LC_ALL,"Russian");   // устанавливаем русскую локаль в программе
+	setlocale(LC_ALL,"Russian");   // ГіГ±ГІГ Г­Г ГўГ«ГЁГўГ ГҐГ¬ Г°ГіГ±Г±ГЄГіГѕ Г«Г®ГЄГ Г«Гј Гў ГЇГ°Г®ГЈГ°Г Г¬Г¬ГҐ
     int x, res;                    
     scanf("%d",&x);
-    res=128*x*x;                   //рассчитываем результат
-    printf ("res = %d\n",res);    //вывод результата на экран
+    res=128*x*x;                   //Г°Г Г±Г±Г·ГЁГІГ»ГўГ ГҐГ¬ Г°ГҐГ§ГіГ«ГјГІГ ГІ
+    printf ("res = %d\n",res);    //ГўГ»ГўГ®Г¤ Г°ГҐГ§ГіГ«ГјГІГ ГІГ  Г­Г  ГЅГЄГ°Г Г­
     return 0;
 }
