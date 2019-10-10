@@ -10,13 +10,13 @@ int main()
 	
 	float x, y, z, a, b, c, s;	  // declare necessary variables	
 	
-	printf("¬ведите переменную x<0:");
+	printf("enter variable x<0:");
 	scanf("%f",&x);
 	
-	printf("¬ведите переменную y>0:");
+	printf("enter variable y>0:");
 	scanf("%f",&y);
 	
-	printf("¬ведите переменную z>0:");
+	printf("enter variable z>0:");
 	scanf("%f",&z);
 	
 	a = exp(fabs(x-y))*pow(fabs(x-y),x+y);
