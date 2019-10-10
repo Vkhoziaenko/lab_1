@@ -1,22 +1,22 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <math.h>	// ïîäêëþ÷àåì ìàòåìàòè÷åñêèå ôóíêöèè	
-#include <locale.h>	// ïîäêëþ÷àåì áèáëèîòåêó ëîêàëèçàöèè (äëÿ ðóññêîãî ÿçûêà â êîíñîëè)
+#include <math.h>	// connect math functions	
+#include <locale.h>	// connect the localization library (for the Russian language in the console)
 
 
 int main() 
 {
-	setlocale(LC_ALL,"Russian");  // óñòàíàâëèâàåì ðóññêóþ ëîêàëü â ïðîãðàììå		
+	setlocale(LC_ALL,"Russian");  // set the Russian locale in the program		
 	
-	float x, y, z, a, b, c, s;	  // äåêëàðèðóåì íåîáõîäèìûå ïåðåìåííûå		
+	float x, y, z, a, b, c, s;	  // declare necessary variables	
 	
-	printf("Ââåäèòå ïåðåìåííóþ x<0:");
+	printf("������� ���������� x<0:");
 	scanf("%f",&x);
 	
-	printf("Ââåäèòå ïåðåìåííóþ y>0:");
+	printf("������� ���������� y>0:");
 	scanf("%f",&y);
 	
-	printf("Ââåäèòå ïåðåìåííóþ z>0:");
+	printf("������� ���������� z>0:");
 	scanf("%f",&z);
 	
 	a = exp(fabs(x-y))*pow(fabs(x-y),x+y);
@@ -25,9 +25,9 @@ int main()
 	
 	c = pow(pow(x,6)+pow(log(y),2),1/3.); 
 	
-	s = a/b+c;		//ðàññ÷èòûâàåì ðåçóëüòàò
+	s = a/b+c;		// calculate the result
 	
-	printf("%f",s);	         //âûâîä ðåçóëüòàòà íà ýêðàí	
+	printf("%f",s);	         //	display result
 	
 	return 0;
 }
