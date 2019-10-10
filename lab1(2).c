@@ -1,13 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <math.h>		
-#include <locale.h>		
+#include <math.h>	// подключаем математические функции	
+#include <locale.h>	// подключаем библиотеку локализации (дл€ русского €зыка в консоли)
+
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */	
 
 int main() 
 {
-	setlocale(LC_ALL,"Russian");		
+	setlocale(LC_ALL,"Russian");  // устанавливаем русскую локаль в программе		
 	
-	float x, y, z, a, b, c, s;			
+	float x, y, z, a, b, c, s;	  // декларируем необходимые переменные		
 	
 	printf("¬ведите переменную x<0:");
 	scanf("%f",&x);
@@ -22,11 +24,11 @@ int main()
 	
 	b = atan(x)+atan(z);
 	
-	c = pow(pow(x,6)+pow(log(y),2),1./3); 
+	c = pow(pow(x,6)+pow(log(y),2),1/3.); 
 	
-	s = a/b+c;		
+	s = a/b+c;		//рассчитываем результат
 	
-	printf("%f",s);		
+	printf("%f",s);	         //вывод результата на экран	
 	
 	return 0;
 }
