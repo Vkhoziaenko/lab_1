@@ -8,17 +8,17 @@ int main(int argc, char *argv[]) {
 	switch (argc){
 	
 	case 1:
-	printf("Введите число a:");
+	printf("insert the number a:");
 	scanf("%f",&a);
-	printf("Введите число b:");
+	printf("insert the number b:");
 	scanf("%f",&b);
-	printf("Сумма равна %f ", a+b);
+	printf("the amount is %f ", a+b);
 	case 2: 
-	printf("Введите число a:");
+	printf("insert the number a:");
 	scanf("%f",&a);
-	printf("Введите число b:");
+	printf("insert the number b:");
 	scanf("%f",&b);
-	printf("Разность равна %f ", a-b);
+	printf("the difference is %f ", a-b);
 	return 0;
 }
 }
