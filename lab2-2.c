@@ -5,14 +5,14 @@
 int main(int argc, char *argv[]) {
 	setlocale(LC_ALL, "Russian");
 	float a, b , c;
-	printf("¬ведите число a:");
+	printf("insert the number a:");
 	scanf("%f",&a);
-	printf("¬ведите число b:");
+	printf("insert the number b:");
 	scanf("%f",&b);
-	printf("¬ведите число c:");
+	printf("insert the number c:");
 	scanf("%f",&c); 
-    if (b - a == c - b) printf("явл€етс€ арифметической прогрессией");
-	else printf("Ќе €вл€етс€ арифметической прогрессией");
+    if (b - a == c - b) printf("Is an arithmetic progression");
+	else printf("not an arithmetic progression");
 	return 0;	
 }
 
