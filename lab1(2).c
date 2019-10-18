@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>	// connect math functions	
-#include <locale.h>	// connect the localization library (for the Russian language in the console)
+#include <locale.h>	// connect the localization library (for the Russian language in the console)f
 
 
 int main() 
