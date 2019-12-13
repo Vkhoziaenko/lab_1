@@ -1,6 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
-#include <locale.h>
+#include <locale.h> // connect the localization library (for the Russian language in the console)
 int main(){
 	setlocale( LC_ALL, "Russian");
 	float a, b, c;
