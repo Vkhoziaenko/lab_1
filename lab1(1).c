@@ -15,3 +15,33 @@ int main (int argc, char const *argv[])
     printf ("res = %d\n",res);    // display result
     return 0;
 }
+#include<stdio.h>
+float a[5][5];
+int i, j;
+ int main (void)
+ {
+    for(i=1; i<=3; i++)
+    {
+        for(j=1; j<=4; j++)
+        {
+            printf("Vvedite element [%d, %d]",i,j);
+            scanf("%f", &a[i][j]);
+        }
+    }
+    
+    for(i=1; i<=3; i++)
+    {
+        a[1][i]/=0.66;
+    }
+    
+    for(i=1; i<=3; i++)
+    {
+        for(j=1; j<=4; j++)
+        {
+            printf("%f ", a[i][j]);
+        }
+        printf("\n");
+    }
+    
+return 0;
+ }
