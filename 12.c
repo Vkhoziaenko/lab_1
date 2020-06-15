@@ -36,7 +36,7 @@ int main()
 
 	setlocale(LC_ALL, "rus");
 		srand(time(NULL));
-	printf("Введите количество значений: ");
+	printf("Г‚ГўГҐГ¤ГЁГІГҐ ГЄГ®Г«ГЁГ·ГҐГ±ГІГўГ® Г§Г­Г Г·ГҐГ­ГЁГ©: ");
 	int n;
 	scanf("%i", &n);
 	for(i=0; i<n; i++)
@@ -54,7 +54,7 @@ int main()
 			table[pointers[key]].next = i;
 		}
 		pointers[key] = i;
-		printf("Добавлено значение %d с ключом %d;\n", value, key);
+		printf("Г„Г®ГЎГ ГўГ«ГҐГ­Г® Г§Г­Г Г·ГҐГ­ГЁГҐ %d Г± ГЄГ«ГѕГ·Г®Г¬ %d;\n", value, key);
 	}
 	int t1 = 0;
 	int t2 = 0;
@@ -80,6 +80,6 @@ d=0;
 	}}
 		for(i=0; i<n; i++)
 	{
-		printf("\nКлюч %d, Значение %d ", table[i].key,table[i].value);}
+		printf("\nГЉГ«ГѕГ· %d, Г‡Г­Г Г·ГҐГ­ГЁГҐ %d ", table[i].key,table[i].value);}
 
 }
