@@ -1,89 +1,129 @@
 #include <stdio.h>
-#include <stdbool.h>
- 
-float a[11][11],max=-1e9,m,n;
-int i,j,save;
- 
-int main() {
- 
-    for(i=1; i<=3; i++)
+#include <stdlib.h>
+#include <math.h>
+#define N 20
+void main(void)
+{
+  double matrix[N][N + 1];
+  double x[N]; 
+  int otv[N]; 
+  int i, j, k, n;
+
+  do
+  {
+    printf("Enter the number of equations: ");
+        scanf("%d", &n);
+    if (N < n)
     {
-        for(j=1; j<=4; j++) 
+        printf( "***THE QUANTITY OF EQUATIONS IS TOO LARGE***\n" );
+    }
+  }    while (N < n);
+
+    printf("Enter coefficients:\n");
+        for (i = 0; i < n; i++)
+        {   
+            printf("String %d: \n",i + 1);
+
+            for(j = 0; j < n + 1; j++)
+            {   
+                printf("x%d: ",j + 1);
+                    scanf("%lf", &matrix[i][j]);
+            }
+        }
+
+    printf("Your equations's system:\n");
+        for (i = 0; i < n; i++)
         {
-            printf ("vvedite element [%d %d]", i, j);
-            scanf ("%f", &a[i][j]);
+            for (j = 0; j < n + 1; j++)
+            {
+                printf("%7.2f", matrix[i][j]);    
+            }
+            printf("\n");
+        }
+            for (i = 0; i < n + 1; i++)
+            {
+                otv[i] = i;
+            }
+        
+//----------------------------------------------STRAIGHT RUN-------------------------------------
+  for (k = 0; k < n; k++)
+  { 
+    mel(k, matrix, n, otv);
+    if (fabs(matrix[k][k] ) < 0.0001)
+    {
+      printf("***EQUATIONS'S SYSTEM HAS NOT ONLY ONE DECICION***");
+        return;
+    }
+
+    for(j = n; j >= k; j--)
+    {
+      matrix[k][j] /= matrix[k][k];
+    }
+
+    for(i = k + 1; i < n; i++)
+    {
+        for(j = n; j >= k; j--)
+        {
+        matrix[i][j] -= matrix[k][j] * matrix[i][k];
         }
     }
- 
-    for(i=1; i<=3; i++)
+  }
+//----------------------------------------------RETURN STROKE-------------------------------------
+    for(i = 0; i < n; i++)
     {
-        if(a[i][1]>max){save=i; max=a[i][1];}
+    x[i] = matrix[i][n];
     }
- 
-    for(i=1; i<=4; i++)
+    for (i = n - 2; i >= 0; i--)
     {
-        m=a[1][i];
-        n=a[save][i];
-        a[1][i]=n;
-        a[save][i]=m;
-    }
- 
-    for(i=1; i<=3; i++)
-    {
-        for(j=1; j<=4; j++)
+        for (j = i + 1; j < n; j++)
         {
-            if(j==1) m=a[i][j];
-            a[i][j]/=m;
+            x[i] -= x[j] * matrix[i][j];
         }
     }
-
-    for(i=2; i<=3; i++)
-    {
-        for(j=1; j<=4; j++)
+    printf("Answer:\n");
+        for(i = 0; i < n; i++)
         {
-            a[i][j]-=a[1][j];
+            for(j = 0; j < n; j++)
+            {
+                if(i == otv[j])
+                {
+                    printf("%f\n", x[j]);
+                        break;
+                }
+            }
         }
-    }
- 
-    max=0;
+    return;
+}
 
-    for(i=2; i<=3; i++)
-    {
-        if(a[i][2]>max){max=a[i][2],save=i;}
-    }
-
-    if(save==3)
-    {
-        for(i=1; i<=4; i++)
+void mel(int k, double matrix[][N + 1], int n, int otv[])
+{
+    int i, j, i_max = k, j_max = k;
+    double temp;
+        for(i = k; i < n; i++)
         {
-            m=a[3][i];
-            n=a[2][i];
-            a[2][i]=m;
-            a[3][i]=n;
-        }
-    }
-
-    for(i=2; i<=3; i++)
+            for(j = k; j < n; j++)
+            {
+    if (fabs(matrix[i_max][j_max] ) < fabs(matrix[i] [j]))
     {
-        for(j=2; j<=4; j++)
-        {
-            if(j==2) m=a[i][j];
-            a[i][j]/=m;
-        }
+        i_max = i;
+        j_max = j;
     }
+            }
+        }
 
-    for(i=2; i<=4; i++) a[3][i]-=a[2][i];
-
-    a[3][4]/=a[3][3];
-    a[3][3]=1;
- 
-    float x1,x2,x3;
-
-    x3=a[3][4];
-    x2=a[2][4]-x3*a[2][3];
-    x1=a[1][4]-x2*a[1][2]-x3*a[1][3];
- 
-    printf("x1=%.2f\nx2=%.2f\nx3=%.2f\n", x1,x2,x3);
- 
-    return 0;
+    for( j = k; j < n + 1; j++ )
+    {
+        temp = matrix[k] [j];
+        matrix[k] [j] = matrix[i_max] [j];
+        matrix[i_max] [j] = temp;
+    }
+    for(i = 0; i < n; i++)
+    {
+        temp = matrix[i] [k];
+        matrix[i] [k] = matrix[i] [j_max];
+        matrix[i] [j_max] = temp;
+    }
+    i = otv[k];
+    otv[k] = otv[j_max];
+    otv[j_max] = i;
 }
