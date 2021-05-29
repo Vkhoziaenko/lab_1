@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<title>Lab 5 decision</title>
+</head>
+
+<body>
+	<div class="container">
+		<div class="input">
+			<div>
+				<label for="aInput"><b>Введите координату начала отрезка: </b></label><input type="text"
+					class="decision" id="aInput">
+			</div>
+			<br>
+			<div>
+				<label for="иInput"><b>Введите координату конца отрезка: </b></label><input type="text" class="decision"
+					id="bInput">
+			</div>
+			<br>
+			<div>
+				<label for="eInput"><b>Введите допустимую погрешность E: </b></label><input type="text" class="decision"
+					id="eInput">
+			</div>
+			<hr>
+		</div>
+		<div class="results">
+			<div>
+				<p id="out"><b>***РЕЗУЛЬТАТ ВЫЧИСЛЕНИЙ***</b></p>
+			</div>
+			<div class="output">
+				<span><button class="buttons" id="out">Вычислить</button></span>
+			</div>
+		</div>
+	</div>
+	<script src="lab5.js"></script>
+</body>
+
+</html>
